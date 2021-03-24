@@ -1,11 +1,11 @@
 export function RepositoryItem(props) {
   return (
     <li>
-      {/* Caso a propriedade esteja vazia, recebe 'Default' */}
-      <strong>{props.repository ?? 'Default'}</strong>
-      <p>Forms in React</p>
+      {/* Caso a propriedade esteja vazia, recebe um valor padrão, nesse caso: 'Default' */}
+      <strong>{props.repository.name ?? 'Default'}</strong>
+      <p>{props.repository.description}</p>
 
-      <a href="#">
+      <a href={props.repository.link}>
         Acessar repositório
       </a>
     </li>

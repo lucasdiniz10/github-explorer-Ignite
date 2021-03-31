@@ -2,13 +2,6 @@ import { useEffect, useState } from "react";
 import { RepositoryItem } from "./RepositoryItem"
 
 import '../styles/repositories.scss';
-
-const repository = {
-  name: 'unform',
-  description: 'Forms in React',
-  link: 'https://github.com/unform/unform',
-}
-
 export function RepositoryList() {
   const [repositories, setRepositories] = useState([])
 
@@ -23,10 +16,18 @@ export function RepositoryList() {
       <h1>Lista de Repositórios</h1>
 
       <ul>
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
+        {repositories.map(repository => {
+          return <RepositoryItem key={repository.name} repository={repository} />
+        })}
+
+        {/*
+        Também é aceito dessa forma, com parênteses:
+
+        {repositories.map(repository => (
+          <RepositoryItem repository={repository} />
+        ))}
+
+         */}
       </ul>
     </section>
   );

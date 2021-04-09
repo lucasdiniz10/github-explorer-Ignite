@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import { RepositoryItem } from "./RepositoryItem"
 
 import '../styles/repositories.scss';
+
+interface Repository {
+  name: string,
+  description: string,
+  html_url: string,
+}
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([])
+  const [repositories, setRepositories] = useState<Repository[]>([])
 
   useEffect(() => {
     fetch('https://api.github.com/users/lucasdiniz10/repos')
@@ -19,15 +26,6 @@ export function RepositoryList() {
         {repositories.map(repository => {
           return <RepositoryItem key={repository.name} repository={repository} />
         })}
-
-        {/*
-        Também é aceito dessa forma, com parênteses:
-
-        {repositories.map(repository => (
-          <RepositoryItem repository={repository} />
-        ))}
-
-         */}
       </ul>
     </section>
   );

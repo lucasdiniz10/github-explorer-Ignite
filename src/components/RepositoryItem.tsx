@@ -1,7 +1,14 @@
-export function RepositoryItem(props) {
+interface RepositoryItemProps {
+  repository: {
+    name: string,
+    description: string,
+    html_url: string,
+  }
+}
+
+export function RepositoryItem(props: RepositoryItemProps) {
   return (
     <li>
-      {/* Caso a propriedade esteja vazia, recebe um valor padrão, nesse caso: 'Default' */}
       <strong>{props.repository.name}</strong>
       <p>{props.repository.description}</p>
 

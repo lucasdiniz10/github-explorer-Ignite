@@ -1,8 +1,12 @@
-# Github Explorer | Ignite React
+<h1 align="center">
+  Github Explorer | Ignite React
+</h1>
 
 Projeto de lista de repositórios produzido no programa de aceleração da <a href="https://github.com/Rocketseat">Rocketseat</a>, para propósito de estudo. :rocket:
-<br>
+
+
 Em construção. :construction:
+
 
 # Tecnologias:
 - [React](https://reactjs.org/)
